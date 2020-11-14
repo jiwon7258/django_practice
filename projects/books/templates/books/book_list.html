@@ -1,0 +1,12 @@
+{% extends "base_books.html"%}
+
+
+{% comment %} block content를 재정의 {% endcomment %}
+{% block content %}
+    <h2>Book List</h2>
+    <ul>
+        {% for book in object_list%}
+            {% comment %} 링크를 클릭하면 book_detail로 넘어간다 {% endcomment %}
+            <li><a href="{%url 'books:book_detail' book.id %}">{{book.title}}</a></li>
+        {% endfor %}
+{% endblock content %}

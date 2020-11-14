@@ -1,0 +1,19 @@
+{% extends "base_books.html"%} {% block content %}
+<h2>Bpoks Management System</h2>
+<ul>
+    {% for modelname in model_list %} 
+    
+    {% comment %} ex) books:author_list {% endcomment %} 
+    {% with urlvar="books:"|add:modelname|lower|add:"_list"%}
+    <li><a href="{%url urlvar%}">{{modelname}}</a></li>
+     {%endwith%} 
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+
+ {% comment %} 
+ base_books.html 템플릿을 상속받아서 
+ content 블록만을 재정의 
+ 나머지 블록은 부모 템플릿 내용을 그대로 사용 
+ {% endcomment %}

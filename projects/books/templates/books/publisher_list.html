@@ -1,0 +1,15 @@
+{% extends "base_books.html"%}
+
+
+{% comment %} block content를 재정의 {% endcomment %}
+{% block content %}
+    <h2>Author List</h2>
+    <ul>
+        {% for publisher in object_list%}
+            {% comment %} 링크를 클릭하면 publisher_detail 넘어간다 
+            /books/publisher/5
+            {% endcomment %}
+            <li><a href="{%url 'books:publisher_detail' publisher.id %}">
+            {{publisher.name}}</a></li>
+        {% endfor %}
+{% endblock content %}

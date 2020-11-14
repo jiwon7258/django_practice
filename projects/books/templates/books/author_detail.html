@@ -1,0 +1,13 @@
+{% extends 'base_books.html'%}
+{% comment %} 
+
+DeatilView에서 호출하는 html
+- DetailView는 DB에서 레코드 하나를 뽑아
+- object라는 컨텍스트 변수로 xxx_detail.html에 넘겨준다
+
+ {% endcomment %}
+{% block content %}
+<h1>{{object.name}}</h1>
+<p>{{object.salutation}}</p>
+<li>Email: {{object.email}}</li>
+{%endblock content%}
